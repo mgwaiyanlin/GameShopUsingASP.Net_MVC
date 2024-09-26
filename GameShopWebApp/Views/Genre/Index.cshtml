@@ -1,0 +1,36 @@
+﻿<div class="container">
+
+    <div class="row pt-4 mb-4">
+        <div class="col-6">
+            <h2 class="text-primary">Game Genres</h2>
+        </div>
+        <div class="text-end col-6">
+            <!-- button to trigger modal -->
+            <a class="btn btn-primary" asp-controller="Genre" asp-action="Create">Add New Genre <i class="bi bi-plus-circle ms-2"></i></a>
+        </div>
+    </div>
+
+    <table class="table table-secondary table-bordered table-striped">
+        <thead>
+            <tr class="table-dark">
+                <th scope="col" class="text-center">#</th>
+                <th scope="col">Game Genres</th>
+                <th scope="col"></th>
+            </tr>
+        </thead>
+        <tbody>
+                @{int number = 1;}
+
+                @foreach(var item in Model)
+                {
+                    <tr>
+                        <th scope="row" class="text-center">@number</th>
+                        <td>@item.Name</td>
+                        <td><button class="btn btn-sm btn-primary rounded">Edit</button></td>
+                    </tr>
+
+                    number++;
+                }
+        </tbody>
+    </table>
+</div>
