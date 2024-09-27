@@ -1,0 +1,39 @@
+﻿@page
+@model GameShopRazorPage.Pages.GenrePages.CreateModel
+
+
+<form method="post">
+
+    <div class="border p-3 mt-4">
+        <div class="row pb-2">
+            <h2 class="text-primary">Add New Game Genre</h2>
+            <hr />
+        </div>
+
+        <div asp-validation-summary="All"></div>
+
+        <div class="row mb-3 p-1">
+            <lable>Enter a new genre</lable>
+            <input asp-for="Genre.Name" class="form-control mb-3" />
+            <span asp-validation-for="Genre.Name" class="text-danger"></span>
+        </div>
+
+        <div class="row">
+            <div class="col-6 col-md-3">
+                <button type="submit" class="btn btn-primary form-control">Save</button>
+            </div>
+            <div class="col-6 col-md-3">
+                <a type="button" asp-page="/GenrePages/Index" class="btn btn-secondary form-control">Back to Genre List</a>
+            </div>
+        </div>
+    </div>
+
+</form>
+
+@section Scripts {
+    @{
+        <partial name="_ValidationScriptsPartial" />
+    }
+}
+
+
