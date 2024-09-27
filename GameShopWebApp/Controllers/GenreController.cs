@@ -71,6 +71,7 @@ namespace GameShopWebApp.Controllers
             {
                 _context.Genres.Update(genre);
                 _context.SaveChanges();
+                TempData["success"] = "A genre has been updated successfully.";
                 return RedirectToAction("Index");
             }
             return View();
@@ -104,6 +105,7 @@ namespace GameShopWebApp.Controllers
             }
             _context.Genres.Remove(genre);
             _context.SaveChanges();
+            TempData["success"] = "A genre has been deleted successfully.";
             return RedirectToAction("Index");
         }
     }
